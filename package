@@ -1,0 +1,11 @@
+ cat package.yaml
+---
+- name: install nginx
+  hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: install nginx
+      package:
+        name: nginx
+        state: present
